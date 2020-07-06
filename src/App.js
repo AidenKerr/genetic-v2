@@ -4,7 +4,11 @@ import Family from './components/Family.js'
 
 function App() {
   return (
-      <Family />
+      <Family
+          mommy="blue"
+          daddy="red"
+          child="purple"
+      />
   );
 }
 
