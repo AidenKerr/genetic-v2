@@ -1,3 +1,10 @@
+# Genetic Algorithm 2.0
+
+This is a work in progress.
+I am building a front end for a genetic algorithm.
+
+The end goal would be a neat demonstration of the principles of natural selection.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
