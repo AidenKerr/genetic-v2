@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Family from './components/Family.js'
+import ControlPanel from "./components/ControlPanel";
 
 function App() {
 
@@ -19,11 +20,15 @@ function App() {
     }
 
     return (
-        <Family
-            mommy={mommy}
-            daddy={daddy}
-            child={child}
-        />
+        <div>
+            <ControlPanel />
+            <Family
+                mommy={mommy}
+                daddy={daddy}
+                child={child}
+            />
+        </div>
+
     );
 }
 

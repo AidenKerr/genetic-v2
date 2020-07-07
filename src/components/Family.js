@@ -22,7 +22,6 @@ function Family(props) {
             </div>
         </div>
     );
-
 }
 
 export default Family;
