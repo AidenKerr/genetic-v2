@@ -10,12 +10,16 @@ function Family(props) {
     return (
         <div className={'container'}>
             <div>
-                <div className={'individual'} style={{backgroundColor: mommy}}></div>
-                <div className={'individual'} style={{backgroundColor: daddy}}></div>
+                <div className={'individual'} style={{backgroundColor: mommy.value}}></div>
+                <div>{mommy.fitness}</div>
+                <div className={'individual'} style={{backgroundColor: daddy.value}}></div>
+                <div>{daddy.fitness}</div>
             </div>
-            ->
-            <div className={'individual'} style={{backgroundColor: child}}></div>
-
+            --->
+            <div>
+                <div className={'individual'} style={{backgroundColor: child.value}}></div>
+                <div>{child.fitness}</div>
+            </div>
         </div>
     );
 
