@@ -1,0 +1,10 @@
+.ControlPanel {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    padding: 10px;
+    background-color: lightgray;
+}
