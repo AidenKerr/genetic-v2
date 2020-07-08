@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import Family from './components/Family.js'
 import ControlPanel from "./components/ControlPanel";
+import Generations from "./components/Generations";
 
 class App extends React.Component {
     constructor(props) {
@@ -27,7 +27,23 @@ class App extends React.Component {
     child = {
         value: "purple",
         fitness: 80,
+        mommy: this.mommy,
+        daddy: this.daddy,
     }
+    child2 = {
+        value: "orange",
+        fitness: 99,
+        mommy: this.child,
+        daddy: this.child,
+    }
+    population = {
+        generations: 1,
+        individuals: [this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, ],
+    }
+    generations = [this.population, this.population];
+
+
+
 
     handleControlPanelChange(state) {
         this.setState(state);
@@ -39,16 +55,14 @@ class App extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="App">
                 <ControlPanel
                     popSize={this.state.popSize}
                     generations={this.state.generations}
                     onControlPanelChange={this.handleControlPanelChange}
                 />
-                <Family
-                    mommy={this.mommy}
-                    daddy={this.daddy}
-                    child={this.child}
+                <Generations
+                    generations={this.generations}
                 />
             </div>
 
