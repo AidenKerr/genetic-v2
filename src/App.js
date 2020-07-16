@@ -9,6 +9,13 @@ class App extends React.Component {
         this.state = {
             popSize: 50,
             generations: 100,
+            deathCutoff: 5, // determines min fitness to survive
+            maxGens: 600, // prevent infinite loops (hopefully less necessary once convergence is written)
+            niche: {    // "niche" need to be renamed - it's not accurate
+                r: 20, // right now it's RGB, but later it will become LAB
+                g: 200,
+                b: 50,
+            }
         }
 
         this.handleControlPanelChange = this.handleControlPanelChange.bind(this);
@@ -59,6 +66,9 @@ class App extends React.Component {
                 <ControlPanel
                     popSize={this.state.popSize}
                     generations={this.state.generations}
+                    deathCutoff={this.state.deathCutoff}
+                    maxGens={this.state.maxGens}
+                    niche={this.state.niche}
                     onControlPanelChange={this.handleControlPanelChange}
                 />
                 <Generations
