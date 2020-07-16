@@ -44,10 +44,14 @@ class App extends React.Component {
         daddy: this.child,
     }
     population = {
-        generations: 1,
+        generation: 1,
         individuals: [this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, ],
     }
-    generations = [this.population, this.population];
+    population2 = {
+        generation: 2,
+        individuals: [this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child]
+    }
+    generations = [this.population];
 
 
 

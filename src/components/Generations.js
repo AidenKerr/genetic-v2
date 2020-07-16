@@ -5,7 +5,7 @@ import '../components/Generations.css';
 function Generations(props) {
 
     const genList = props.generations.map((pop) =>
-        <Population key={pop.generations.toString()} population={pop}/>
+        <Population key={pop.generation.toString()} population={pop}/>
     );
 
     return (
