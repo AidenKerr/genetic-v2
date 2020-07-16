@@ -51,7 +51,7 @@ class App extends React.Component {
         generation: 2,
         individuals: [this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child]
     }
-    generations = [this.population];
+    generations = [this.population, this.population2];
 
 
 

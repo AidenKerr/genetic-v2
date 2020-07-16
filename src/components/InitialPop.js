@@ -1,21 +1,17 @@
 import React from 'react';
-import '../components/Population.css';
-import Family from "./Family";
 
 function Population(props) {
     const pop = props.population;
 
     const listPop = pop.individuals.map((individual) =>
-        <Family
-            mommy={individual.mommy}
-            daddy={individual.daddy}
-            child={individual}
-        />
+        <div className="container" style={{backgroundColor: individual.value}}>
+            {individual.fitness}
+        </div>
     );
 
     return (
         <div className="Population">
-            Generation: {pop.generation}
+            Initial Population
             <div className="PopulationList">
                 {listPop}
             </div>
