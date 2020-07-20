@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Genetic2.0/static/css/main.03d1c22c.chunk.css",
+    "main.js": "/Genetic2.0/static/js/main.adb48474.chunk.js",
+    "main.js.map": "/Genetic2.0/static/js/main.adb48474.chunk.js.map",
+    "runtime-main.js": "/Genetic2.0/static/js/runtime-main.8ab7152b.js",
+    "runtime-main.js.map": "/Genetic2.0/static/js/runtime-main.8ab7152b.js.map",
+    "static/js/2.7e72c9dd.chunk.js": "/Genetic2.0/static/js/2.7e72c9dd.chunk.js",
+    "static/js/2.7e72c9dd.chunk.js.map": "/Genetic2.0/static/js/2.7e72c9dd.chunk.js.map",
+    "index.html": "/Genetic2.0/index.html",
+    "precache-manifest.53451646dfd98218d19840958e0b8035.js": "/Genetic2.0/precache-manifest.53451646dfd98218d19840958e0b8035.js",
+    "service-worker.js": "/Genetic2.0/service-worker.js",
+    "static/css/main.03d1c22c.chunk.css.map": "/Genetic2.0/static/css/main.03d1c22c.chunk.css.map",
+    "static/js/2.7e72c9dd.chunk.js.LICENSE.txt": "/Genetic2.0/static/js/2.7e72c9dd.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8ab7152b.js",
+    "static/js/2.7e72c9dd.chunk.js",
+    "static/css/main.03d1c22c.chunk.css",
+    "static/js/main.adb48474.chunk.js"
+  ]
+}
