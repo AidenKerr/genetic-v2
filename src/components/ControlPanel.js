@@ -12,6 +12,7 @@ class ControlPanel extends React.Component {
     }
 
 
+    // handles changes to the control panel except color changes
     handleChange(event) {
         const target = event.target;
         const value = parseInt(target.value);
@@ -24,16 +25,18 @@ class ControlPanel extends React.Component {
         this.props.onControlPanelChange(state);
     }
 
+    // handles color changes on control panel
     handleColorChange(color) {
         const tempState = {
-            niche: color.rgb,
+            optimal: color.rgb,
         };
         this.props.onControlPanelChange(tempState);
     }
 
+    // begins the algorithm
     handleSubmit(event) {
         event.preventDefault();
-        //TODO
+        this.props.onControlPanelSubmit();
     }
 
     render() {
@@ -46,21 +49,19 @@ class ControlPanel extends React.Component {
                     </label>
                     <br />
                     <label>
-                        Generations:
-                        <input name="generations" type="number" value={this.props.generations} onChange={this.handleChange} />
-                    </label>
-                    <label>
                         Death Cutoff:
                         <input name="deathCutoff" type="number" value={this.props.deathCutoff} onChange={this.handleChange} />
                     </label>
+                    <br />
                     <label>
                         Max Generations:
                         <input name="maxGens" type="number" value={this.props.maxGens} onChange={this.handleChange} />
                     </label>
+                    <br />
                     <label>
-                        Niche (to be renamed):
+                        Optimal Color:
                         <ChromePicker
-                            color={this.props.niche}
+                            color={this.props.optimal}
                             onChange={this.handleColorChange}
                             disableAlpha={true}
                         />

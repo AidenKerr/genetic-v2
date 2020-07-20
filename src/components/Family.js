@@ -1,24 +1,26 @@
 import React from 'react';
 import '../components/Family.css';
+import Spectra from "spectra";
 
 
 function Family(props) {
-    const daddy = props.daddy;
-    const mommy = props.mommy;
-    const child = props.child;
+    // convert to hex to use in CSS
+    const mommy = Spectra(props.mommy.value).hex();
+    const daddy = Spectra(props.daddy.value).hex();
+    const child = Spectra(props.child.value).hex();
 
     return (
         <div className={'container'}>
             <div>
-                <div className={'individual'} style={{backgroundColor: mommy.value}}></div>
-                <div>{mommy.fitness}</div>
-                <div className={'individual'} style={{backgroundColor: daddy.value}}></div>
-                <div>{daddy.fitness}</div>
+                <div className={'individual'} style={{backgroundColor: mommy}}></div>
+                <div>{props.mommy.fitness}</div>
+                <div className={'individual'} style={{backgroundColor: daddy}}></div>
+                <div>{props.daddy.fitness}</div>
             </div>
             --->
             <div>
-                <div className={'individual'} style={{backgroundColor: child.value}}></div>
-                <div>{child.fitness}</div>
+                <div className={'individual'} style={{backgroundColor: child}}></div>
+                <div>{props.child.fitness}</div>
             </div>
         </div>
     );

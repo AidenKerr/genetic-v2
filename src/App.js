@@ -2,58 +2,25 @@ import React from 'react';
 import './App.css';
 import ControlPanel from "./components/ControlPanel";
 import Generations from "./components/Generations";
+import Algorithm from "./algorithm/Algorithm";
 
 class App extends React.Component {
     constructor(props) {
         super(props);
+
+        this.alg = new Algorithm();
+
         this.state = {
-            popSize: 50,
-            generations: 100,
+            popSize: 20,
             deathCutoff: 5, // determines min fitness to survive
-            maxGens: 600, // prevent infinite loops (hopefully less necessary once convergence is written)
-            niche: {    // "niche" need to be renamed - it's not accurate
-                r: 20, // right now it's RGB, but later it will become LAB
-                g: 200,
-                b: 50,
-            }
+            maxGens: 15, // prevent infinite loops (hopefully less necessary once convergence is written)
+            optimal: this.alg.newColor(),    // Optimal individual in environment (in RGB, but converted to LAB for fitness calculation)
+            generations: [],
         }
 
         this.handleControlPanelChange = this.handleControlPanelChange.bind(this);
         this.handleControlPanelSubmit = this.handleControlPanelSubmit.bind(this);
     }
-
-    // dummy data
-    mommy = {
-        value: "blue",
-        fitness: 50,
-    }
-    daddy = {
-        value: "red",
-        fitness: 60,
-    }
-    child = {
-        value: "purple",
-        fitness: 80,
-        mommy: this.mommy,
-        daddy: this.daddy,
-    }
-    child2 = {
-        value: "orange",
-        fitness: 99,
-        mommy: this.child,
-        daddy: this.child,
-    }
-    population = {
-        generation: 1,
-        individuals: [this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, ],
-    }
-    population2 = {
-        generation: 2,
-        individuals: [this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child, this.child2, this.child]
-    }
-    generations = [this.population, this.population2];
-
-
 
 
     handleControlPanelChange(state) {
@@ -61,7 +28,36 @@ class App extends React.Component {
     }
 
     handleControlPanelSubmit(event) {
-        //TODO
+        this.setState({
+            generations: [this.alg.generateStartingPop(this.state.popSize, this.state.optimal)],
+        });
+
+        this.genInterval = setInterval(
+            () => this.nextGen(),
+            10,
+        );
+    }
+
+    nextGen() {
+        const gens = this.state.generations;
+        const prevGen = gens[gens.length - 1];
+
+        // stop after max number of generations
+        if (prevGen.generation >= this.state.maxGens) {
+            clearInterval(this.genInterval);
+            return;
+        }
+
+        const popSize = this.state.popSize;
+        const optimal = this.state.optimal;
+        const deathCutoff = this.state.deathCutoff;
+
+
+        const nextGen = this.alg.nextGen(prevGen, popSize, optimal, deathCutoff);
+        gens.push(nextGen);
+        this.setState({
+            generations: gens,
+        });
     }
 
     render() {
@@ -69,17 +65,16 @@ class App extends React.Component {
             <div className="App">
                 <ControlPanel
                     popSize={this.state.popSize}
-                    generations={this.state.generations}
                     deathCutoff={this.state.deathCutoff}
                     maxGens={this.state.maxGens}
-                    niche={this.state.niche}
+                    optimal={this.state.optimal}
                     onControlPanelChange={this.handleControlPanelChange}
+                    onControlPanelSubmit={this.handleControlPanelSubmit}
                 />
                 <Generations
-                    generations={this.generations}
+                    generations={this.state.generations}
                 />
             </div>
-
         );
     }
 }
