@@ -1,6 +1,6 @@
 {
   "name": "genetic2.0",
-  "homepage": "http://AidenKerr.github.io/Genetic2.0",
+  "homepage": "http://AidenKerr.github.io/genetic-v2",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,8 +11,9 @@
     "react": "^16.13.1",
     "react-color": "^2.18.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1",
-    "spectra": "^0.2.3"
+    "react-scripts": "^3.4.1",
+    "spectra": "^0.2.3",
+    "typescript": "^3.9.7"
   },
   "scripts": {
     "start": "react-scripts start",
