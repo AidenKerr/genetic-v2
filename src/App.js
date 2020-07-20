@@ -34,7 +34,7 @@ class App extends React.Component {
 
         this.genInterval = setInterval(
             () => this.nextGen(),
-            10,
+            0,
         );
     }
 

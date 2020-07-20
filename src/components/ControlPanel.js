@@ -8,6 +8,7 @@ class ControlPanel extends React.Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleColorChange = this.handleColorChange.bind(this);
+        this.handleReset = this.handleReset.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -27,10 +28,17 @@ class ControlPanel extends React.Component {
 
     // handles color changes on control panel
     handleColorChange(color) {
-        const tempState = {
+        const state = {
             optimal: color.rgb,
         };
-        this.props.onControlPanelChange(tempState);
+        this.props.onControlPanelChange(state);
+    }
+
+    handleReset() {
+        const state = {
+            generations: []
+        };
+        this.props.onControlPanelChange(state);
     }
 
     // begins the algorithm
@@ -45,7 +53,7 @@ class ControlPanel extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <label>
                         Population Size:
-                        <input name="popSize" type="number" value={this.props.popSize} onChange={this.handleChange} />
+                        <input name="popSize" type="number" value={this.props.popSize} onChange={this.handleChange} min="2"/>
                     </label>
                     <br />
                     <label>
@@ -67,7 +75,9 @@ class ControlPanel extends React.Component {
                         />
                     </label>
                     <br/>
-                    <input type="submit" value="start" />
+                    <input type="submit" value="Start" />
+                    <br/>
+                    <input type="button" value="Reset" onClick={this.handleReset}/>
                 </form>
 
             </div>
