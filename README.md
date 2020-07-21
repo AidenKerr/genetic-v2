@@ -1,9 +1,13 @@
 # Genetic Algorithm 2.0
 
 This is a work in progress.
-I am building a front end for a genetic algorithm.
 
-The end goal would be a neat demonstration of the principles of natural selection.
+[Check it out here!](https://aidenkerr.github.io/genetic-v2/)
+
+This is a neat demonstration of the principles of natural selection.
+
+To start, choose the settings of your population. Then click start and watch the population evolve to the optimal colour!
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
