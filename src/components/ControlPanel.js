@@ -67,6 +67,11 @@ class ControlPanel extends React.Component {
                     </label>
                     <br />
                     <label>
+                        Display Every:
+                        <input name="displayInterval" type="number" value={this.props.displayInterval} onChange={this.handleChange} min="1"/>
+                    </label>
+                    <br />
+                    <label>
                         Optimal Color:
                         <ChromePicker
                             color={this.props.optimal}

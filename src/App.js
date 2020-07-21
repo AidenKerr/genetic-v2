@@ -14,6 +14,7 @@ class App extends React.Component {
             popSize: 20,
             deathCutoff: 5, // determines min fitness to survive
             maxGens: 15, // prevent infinite loops (hopefully less necessary once convergence is written)
+            displayInterval: 5, // show every n generations
             optimal: this.alg.newColor(),    // Optimal individual in environment (in RGB, but converted to LAB for fitness calculation)
             generations: [],
         }
@@ -67,12 +68,14 @@ class App extends React.Component {
                     popSize={this.state.popSize}
                     deathCutoff={this.state.deathCutoff}
                     maxGens={this.state.maxGens}
+                    displayInterval={this.state.displayInterval}
                     optimal={this.state.optimal}
                     onControlPanelChange={this.handleControlPanelChange}
                     onControlPanelSubmit={this.handleControlPanelSubmit}
                 />
                 <Generations
                     generations={this.state.generations}
+                    displayInterval={this.state.displayInterval}
                 />
             </div>
         );

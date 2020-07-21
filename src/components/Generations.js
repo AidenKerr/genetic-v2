@@ -5,7 +5,11 @@ import '../components/Generations.css';
 
 function Generations(props) {
 
-    const genList = props.generations.map((pop) => {
+    const genList = props.generations.filter((pop) => {
+        // first, only show every nth generation
+        return pop.generation % props.displayInterval === 0;
+    }).map((pop) => {
+        // then, render as components
         // render the first generation differently
         if (pop.generation === 0) {
             return <InitialPop key={pop.generation.toString()} population={pop} />
