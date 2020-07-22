@@ -1,7 +1,19 @@
 .Generations {
     margin-top: 20px;
     padding: 10px;
-    background-color: darkgray;
+    background-color: #999999;
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 1px;
+    border-color: #080705;
     width: 90%;
     display: inline-block;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    color: black;
+    background-color: black;
+    width: 91%;
 }

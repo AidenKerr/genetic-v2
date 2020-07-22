@@ -10,10 +10,16 @@ div {
     height: 100px;
     border-style: solid;
     border-width: 1px;
+    border-color: #000;
     margin: 10px;
 }
 
 .individual {
-    height: 25px;
-    width: 25px;
+    height: 35px;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }

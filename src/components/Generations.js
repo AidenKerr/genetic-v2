@@ -17,11 +17,16 @@ function Generations(props) {
         return <Population key={pop.generation.toString()} population={pop}/>
     });
 
-    return (
-        <div className="Generations">
-            {genList[0] ? genList : "Press Start!"}
-        </div>
-    );
+    if (genList[0]) {
+        return (
+            <div>
+                <hr />
+                <div className="Generations">
+                    {genList}
+                </div>
+            </div>
+        );
+    } else return null;
 }
 
 export default Generations;

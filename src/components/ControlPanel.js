@@ -71,9 +71,10 @@ class ControlPanel extends React.Component {
                         <input name="displayInterval" type="number" value={this.props.displayInterval} onChange={this.handleChange} min="1"/>
                     </label>
                     <br />
-                    <label>
+                    <label className={'colorPicker'}>
                         Optimal Color:
                         <ChromePicker
+                            className={'chromePicker'}
                             color={this.props.optimal}
                             onChange={this.handleColorChange}
                             disableAlpha={true}

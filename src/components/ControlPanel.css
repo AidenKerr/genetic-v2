@@ -2,9 +2,35 @@
     margin-top: 30px;
     display: flex;
     justify-content: center;
+    color: #EEEEEE;
+    margin-bottom: 20px;
 }
 
 form {
+    display: flex;
+    flex-direction: column;
     padding: 10px;
-    background-color: lightgray;
+    background-color: #999999;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: #000;
+}
+
+label {
+    display: flex;
+    justify-content: space-between;
+}
+
+.colorPicker {
+    display: flex;
+    flex-direction: column;
+}
+
+.chromePicker {
+    width: auto !important;
+}
+
+input[type="button"], input[type="submit"] {
+    height: 50px;
 }
