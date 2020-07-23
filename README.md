@@ -1,5 +1,5 @@
-#Genetic Algorithm 
-###What is this? 
+#Genetic Algorithm  
+###What is this?  
 
 This is a program I initially wrote for a BIOL 111 project. It visualizes the process of natural selection & evolution.
 
@@ -7,7 +7,7 @@ I must admit, I am not a biologist! This is a fun visualization, but I do not ma
 
 This visualisation uses color to represent some arbitrary trait. When you click start, watch as the population's colors evolve!
 
-###How do I use this?
+###How do I use this?  
 
 First, choose your settings:
 
@@ -21,7 +21,7 @@ Next, click start.
 
 The algorithm will then generate an initial population, followed by each consecutive generation.
 
-###How does this work?
+###How does this work?  
 
 This algorithm works by repeating a series of steps.
 
@@ -34,7 +34,7 @@ Each following generation is created with these steps:
 * Crossover
 * Mutation
 
-###Is this realistic?
+###Is this realistic?  
 
 Short answer: no.
 
@@ -48,7 +48,7 @@ In reality, family & gender exists.
 
 This is a cool, working visualisation, but it is not true reality.  
 
-###Known Bugs & future plans
+###Known Bugs & future plans  
 
 These are things I intend to fix or implement
 
