@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b2c97de911d800f5017571cb79e3fb6e",
+    "revision": "27b286c948901e6760a8689957369384",
     "url": "/genetic-v2/index.html"
   },
   {
-    "revision": "2a2413fedb32f5795007",
-    "url": "/genetic-v2/static/css/main.cfa453b2.chunk.css"
+    "revision": "47db3904e2c00e0fb902",
+    "url": "/genetic-v2/static/css/main.5daf86dd.chunk.css"
   },
   {
     "revision": "3391f9362b5cab45ebdb",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/genetic-v2/static/js/2.781a8ed2.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "2a2413fedb32f5795007",
-    "url": "/genetic-v2/static/js/main.dd6227b2.chunk.js"
+    "revision": "47db3904e2c00e0fb902",
+    "url": "/genetic-v2/static/js/main.de0d5b22.chunk.js"
   },
   {
     "revision": "58620764c0eb2dd379b6",

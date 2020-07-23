@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/genetic-v2/static/css/main.cfa453b2.chunk.css",
-    "main.js": "/genetic-v2/static/js/main.dd6227b2.chunk.js",
-    "main.js.map": "/genetic-v2/static/js/main.dd6227b2.chunk.js.map",
+    "main.css": "/genetic-v2/static/css/main.5daf86dd.chunk.css",
+    "main.js": "/genetic-v2/static/js/main.de0d5b22.chunk.js",
+    "main.js.map": "/genetic-v2/static/js/main.de0d5b22.chunk.js.map",
     "runtime-main.js": "/genetic-v2/static/js/runtime-main.56715a61.js",
     "runtime-main.js.map": "/genetic-v2/static/js/runtime-main.56715a61.js.map",
     "static/js/2.781a8ed2.chunk.js": "/genetic-v2/static/js/2.781a8ed2.chunk.js",
     "static/js/2.781a8ed2.chunk.js.map": "/genetic-v2/static/js/2.781a8ed2.chunk.js.map",
     "index.html": "/genetic-v2/index.html",
-    "precache-manifest.46bc4d637c93454f20ece189a8f91b56.js": "/genetic-v2/precache-manifest.46bc4d637c93454f20ece189a8f91b56.js",
+    "precache-manifest.a9e2f0f4e473be0c72cad05dd8eb4342.js": "/genetic-v2/precache-manifest.a9e2f0f4e473be0c72cad05dd8eb4342.js",
     "service-worker.js": "/genetic-v2/service-worker.js",
-    "static/css/main.cfa453b2.chunk.css.map": "/genetic-v2/static/css/main.cfa453b2.chunk.css.map",
+    "static/css/main.5daf86dd.chunk.css.map": "/genetic-v2/static/css/main.5daf86dd.chunk.css.map",
     "static/js/2.781a8ed2.chunk.js.LICENSE.txt": "/genetic-v2/static/js/2.781a8ed2.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.56715a61.js",
     "static/js/2.781a8ed2.chunk.js",
-    "static/css/main.cfa453b2.chunk.css",
-    "static/js/main.dd6227b2.chunk.js"
+    "static/css/main.5daf86dd.chunk.css",
+    "static/js/main.de0d5b22.chunk.js"
   ]
 }
