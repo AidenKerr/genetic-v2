@@ -15,7 +15,7 @@ function Family(props) {
                 <div className={'individual'} style={{backgroundColor: mommy}}>{props.mommy.fitness}</div>
                 <div className={'individual'} style={{backgroundColor: daddy}}>{props.daddy.fitness}</div>
             </div>
-            <div>&#8594;</div>
+            <div className={'arrow'}>&#8594;</div>
             <div>
                 <div className={'individual'} style={{backgroundColor: child}}>{props.child.fitness}</div>
             </div>
