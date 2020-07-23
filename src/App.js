@@ -29,8 +29,10 @@ class App extends React.Component {
     }
 
     handleControlPanelSubmit(event) {
+        const initialGen = [this.alg.generateStartingPop(this.state.popSize, this.state.optimal)];
+
         this.setState({
-            generations: [this.alg.generateStartingPop(this.state.popSize, this.state.optimal)],
+            generations: initialGen,
         });
 
         this.genInterval = setInterval(
@@ -64,6 +66,9 @@ class App extends React.Component {
     render() {
         return (
             <div className="App">
+                <h1>Genetic Algorithm</h1>
+                <h5>By Aiden Kerr</h5>
+                <a href="https://github.com/AidenKerr/genetic-v2/blob/master/README.md">What is this? Click Here!</a>
                 <ControlPanel
                     popSize={this.state.popSize}
                     deathCutoff={this.state.deathCutoff}
