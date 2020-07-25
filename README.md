@@ -99,7 +99,6 @@ This is a cool, working visualisation, but it is not true reality.
 
 These are things I intend to fix or implement
 
-* Fitness is calculated before mutations
 * Setting the death cutoff too high may result in a crash
 * Data analysis screens (eg fitness over time)
 * Add mutation rate to Control Panel
