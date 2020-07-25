@@ -53,5 +53,4 @@ This is a cool, working visualisation, but it is not true reality.
 These are things I intend to fix or implement
 
 * Fitness is calculated before mutations
-* There is some weirdness regarding the death situation that I need to explore.
 * Data analysis screens (eg fitness over time)
