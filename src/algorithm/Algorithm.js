@@ -86,8 +86,11 @@ class Algorithm {
 
     // remove individuals with fitness below cutoff
     death(pop, deathCutoff) {
-        pop.individuals = pop.individuals.filter(i => i.fitness >= deathCutoff);
-        return pop;
+        const newIndividuals = pop.individuals.filter(i => i.fitness >= deathCutoff);
+        return {
+            individuals: newIndividuals,
+            ...pop
+        };
     }
 
     selection(pop, popSize) {
