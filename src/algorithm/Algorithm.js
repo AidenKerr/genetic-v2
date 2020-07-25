@@ -42,7 +42,7 @@ class Algorithm {
         return fitness.toFixed(1);
     }
 
-    generateStartingPop(popSize, optimal) {
+    generateStartingPop(popSize, optimal, deathCutoff) {
         // initialize population
         let population = {
             generation: 0,
@@ -60,26 +60,28 @@ class Algorithm {
             });
         }
 
-        return population;
+        // remove the weaklings before returning
+        return this.death(population, deathCutoff);
     }
 
     // compute the next generation
     nextGen(prevGen, popSize, optimal, deathCutoff) {
 
-        let nextGen = this.death(prevGen, deathCutoff);
-
         // the population is grouped into pairs for breeding
         // I temporarily change the object for the selection
-        let selectionPop = this.selection(nextGen, popSize);
+        let selectionPop = this.selection(prevGen, popSize);
 
         // the pairs will now breed
-        nextGen = this.crossover(selectionPop, optimal);
+        let nextGen = this.crossover(selectionPop, optimal);
 
         // add mutations
         nextGen = this.mutation(nextGen);
 
         // update counter
         nextGen = this.updateCounter(nextGen);
+
+        // remove the weaklings
+        nextGen = this.death(nextGen, deathCutoff);
 
         return nextGen;
     }
@@ -88,8 +90,8 @@ class Algorithm {
     death(pop, deathCutoff) {
         const newIndividuals = pop.individuals.filter(i => i.fitness >= deathCutoff);
         return {
+            ...pop,
             individuals: newIndividuals,
-            ...pop
         };
     }
 

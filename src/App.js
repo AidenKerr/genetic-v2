@@ -29,7 +29,7 @@ class App extends React.Component {
     }
 
     handleControlPanelSubmit(event) {
-        const initialGen = [this.alg.generateStartingPop(this.state.popSize, this.state.optimal)];
+        const initialGen = [this.alg.generateStartingPop(this.state.popSize, this.state.optimal, this.state.deathCutoff)];
 
         this.setState({
             generations: initialGen,
