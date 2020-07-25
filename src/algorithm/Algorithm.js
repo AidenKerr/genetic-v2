@@ -72,10 +72,13 @@ class Algorithm {
         let selectionPop = this.selection(prevGen, popSize);
 
         // the pairs will now breed
-        let nextGen = this.crossover(selectionPop, optimal);
+        let nextGen = this.crossover(selectionPop);
 
         // add mutations
         nextGen = this.mutation(nextGen);
+
+        // calculate fitness
+        nextGen = this.assignFitness(nextGen, optimal);
 
         // update counter
         nextGen = this.updateCounter(nextGen);
@@ -150,7 +153,7 @@ class Algorithm {
     }
 
     // combine color values
-    crossover(sel, optimal) {
+    crossover(sel) {
         // recreate population object
         let nextPop = {
             generation: sel.generation,
@@ -159,7 +162,7 @@ class Algorithm {
 
         // combine each pair into one individual
         for (let i = 0; i < sel.pairs.length; i++) {
-            let nextInd = this.mate(sel.pairs[i], optimal);
+            let nextInd = this.mate(sel.pairs[i]);
             nextPop.individuals.push(nextInd);
         }
 
@@ -167,7 +170,7 @@ class Algorithm {
     }
 
     // breed one pair
-    mate(pair, optimal) {
+    mate(pair) {
         const mommy = pair[0]; // mommy and daddy have no meaning
         const daddy = pair[1]; // gender does not exist in this universe
 
@@ -184,11 +187,9 @@ class Algorithm {
         const crossPnt = this.getRandomInt(1, 8);
         const babyGene = mommyGene.substring(0, crossPnt) + daddyGene.substring(crossPnt);
 
-        const value = this.geneToColor(babyGene);
-
         const baby = {
-            value: value,
-            fitness: this.calculateFitness(value, optimal),
+            value: this.geneToColor(babyGene),
+            fitness: 0, // fitness will be calculated after mutations
             mommy: {
                 value: mommy.value,
                 fitness: mommy.fitness,
@@ -247,15 +248,20 @@ class Algorithm {
                 // a random integer that tends to be fairly small, but can be larger
                 const delta = Math.round(this.rand_bm(0, 255, 5));
 
+                let newValue;
+
                 switch(mutationVal) {
                     case 0:
-                        ind.value.r = ind.value.r + (delta * sign);
+                        newValue = ind.value.r + (delta * sign);
+                        pop.individuals[i].value.r = Math.min(newValue, 255);
                         break;
                     case 1:
-                        ind.value.g = ind.value.b + (delta * sign);
+                        newValue = ind.value.g + (delta * sign);
+                        pop.individuals[i].value.g = Math.min(newValue, 255);
                         break;
                     case 2:
-                        ind.value.b = ind.value.b + (delta * sign);
+                        newValue = ind.value.b + (delta * sign);
+                        pop.individuals[i].value.b = Math.min(newValue, 255);
                         break;
                 }
             }
@@ -278,6 +284,15 @@ class Algorithm {
         num *= max - min; // Stretch to fill range
         num += min; // offset to min
         return num;
+    }
+
+    assignFitness(pop, optimal) {
+        for (let i = 0; i < pop.individuals.length; i++) {
+            const value = pop.individuals[i].value;
+            pop.individuals[i].fitness = this.calculateFitness(value, optimal);
+        }
+
+        return pop;
     }
 
     // this could have been done earlier, but I make it it's own step for clarity
