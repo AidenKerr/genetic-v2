@@ -36,6 +36,8 @@ class App extends React.Component {
     }
 
     handleControlPanelSubmit() {
+        clearInterval(this.genInterval);
+
         const initialGen = this.alg.generateStartingPop(this.state.popSize, this.state.optimal, this.state.deathCutoff);
 
         this.setState({
