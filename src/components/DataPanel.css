@@ -1,0 +1,39 @@
+.DataPanel {
+    padding: 10px;
+    width: 90%;
+    background-color: #999999;
+    display: flex;
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 1px;
+    border-color: #080705;
+    margin: auto;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.Data {
+    background-color: #F7F7F2;
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 1px;
+    border-color: #080705;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Info {
+    background-color: #F7F7F2;
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 1px;
+    border-color: #080705;
+    width: 302px;
+    height: 302px;
+}
+
+.Info div {
+    padding: 5px 0 0 10px;
+    text-align: left;
+}

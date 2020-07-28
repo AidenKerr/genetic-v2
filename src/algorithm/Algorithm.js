@@ -39,7 +39,7 @@ class Algorithm {
         // I subtract from 100 so that 100 is the optimal fitness
         const fitness = 100 - DeltaE.getDeltaE00(valueLAB, optimalLAB);
 
-        return fitness.toFixed(1);
+        return parseFloat(fitness.toFixed(1));
     }
 
     generateStartingPop(popSize, optimal, deathCutoff) {
@@ -135,7 +135,7 @@ class Algorithm {
     // returns an individual randomly based on their fitness
     randWeightedInd(individuals) {
         // sum of fitness
-        const indFitness = individuals.map(x => parseInt(x.fitness));
+        const indFitness = individuals.map(x => x.fitness);
         const weightSums = indFitness.reduce((acc, cur) => acc + cur);
         let randNum = this.getRandomInt(0, weightSums); // random value from 0 to weightSums
 

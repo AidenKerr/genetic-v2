@@ -36,7 +36,13 @@ class ControlPanel extends React.Component {
 
     handleReset() {
         const state = {
-            generations: []
+            generations: [],
+            stats: {
+                fitnessOverTime: [],
+                stdDevOverTime: [],
+                lowestFitness: 100,
+                highestFitness: 0,
+            },
         };
         this.props.onControlPanelChange(state);
     }

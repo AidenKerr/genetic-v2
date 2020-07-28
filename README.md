@@ -100,5 +100,5 @@ This is a cool, working visualisation, but it is not true reality.
 These are things I intend to fix or implement
 
 * Setting the death cutoff too high may result in a crash
-* Data analysis screens (eg fitness over time)
+* Reset does not end the interval
 * Add mutation rate to Control Panel
