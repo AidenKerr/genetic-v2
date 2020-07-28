@@ -72,29 +72,36 @@ class App extends React.Component {
 
         // create next generation
         const nextGen = this.alg.nextGen(prevGen, popSize, optimal, deathCutoff);
-        gens.push(nextGen);
 
-        // update stats
-        const stats = this.state.stats;
-        let fitnessOverTime = stats.fitnessOverTime;
-        let stdDevOverTime = stats.stdDevOverTime;
-        let lowestFitness = stats.lowestFitness;
-        let highestFitness = stats.highestFitness;
-        fitnessOverTime.push(this.calculateAverageFitness(nextGen));
-        stdDevOverTime.push(this.calculateStdDevFitness(nextGen));
-        lowestFitness = this.findLowestFitness(lowestFitness, nextGen);
-        highestFitness = this.findHighestFitness(highestFitness, nextGen);
 
-        // update state
-        this.setState({
-            generations: gens,
-            stats: {
-                fitnessOverTime: fitnessOverTime,
-                stdDevOverTime: stdDevOverTime,
-                lowestFitness: lowestFitness,
-                highestFitness: highestFitness,
-            },
-        });
+        // ensure next generation can actually repopulate. Otherwise end simulation
+        if (nextGen.individuals.length > 1) {
+            gens.push(nextGen);
+
+            // update stats
+            const stats = this.state.stats;
+            let fitnessOverTime = stats.fitnessOverTime;
+            let stdDevOverTime = stats.stdDevOverTime;
+            let lowestFitness = stats.lowestFitness;
+            let highestFitness = stats.highestFitness;
+            fitnessOverTime.push(this.calculateAverageFitness(nextGen));
+            stdDevOverTime.push(this.calculateStdDevFitness(nextGen));
+            lowestFitness = this.findLowestFitness(lowestFitness, nextGen);
+            highestFitness = this.findHighestFitness(highestFitness, nextGen);
+
+            // update state
+            this.setState({
+                generations: gens,
+                stats: {
+                    fitnessOverTime: fitnessOverTime,
+                    stdDevOverTime: stdDevOverTime,
+                    lowestFitness: lowestFitness,
+                    highestFitness: highestFitness,
+                },
+            });
+        } else {
+            clearInterval(this.genInterval);
+        }
     }
 
     // calculates average fitness and returns as object for data visualization.

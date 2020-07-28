@@ -6,7 +6,8 @@ import '../components/DataPanel.css'
 function DataPanel(props) {
 
     let currentFitness;
-    let averageFitness
+    let averageFitness;
+    let generation;
 
     if (props.prevGen) { // ensure the props exist
         currentFitness = props.prevGen.individuals.map((cur, i) => {
@@ -17,6 +18,7 @@ function DataPanel(props) {
         });
 
        averageFitness = props.stats.fitnessOverTime[props.stats.fitnessOverTime.length - 1].y;
+       generation = props.prevGen.generation;
     }
 
 
@@ -54,6 +56,7 @@ function DataPanel(props) {
                 </XYPlot>
             </div>
             <div className="Info">
+                <div>Generation: {generation}</div>
                 <div>Lowest Fitness: {props.stats.lowestFitness}</div>
                 <div>Highest Fitness: {props.stats.highestFitness}</div>
                 <div>Average Fitness: {averageFitness}</div>

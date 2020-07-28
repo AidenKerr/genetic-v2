@@ -147,8 +147,7 @@ class Algorithm {
         }
 
         // if loop ends with no return, return last element
-        // this introduces a bias, but it shouldn't be too bad
-        console.log("reached end in weightedInd, defaulting to last element")
+        // this shouldn't introduce much of a bias, as the last one would have been picked if it weren't for rounding issues
         return individuals[individuals.length - 1];
     }
 
