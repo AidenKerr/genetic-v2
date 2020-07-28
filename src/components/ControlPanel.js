@@ -44,6 +44,7 @@ class ControlPanel extends React.Component {
                 highestFitness: 0,
             },
         };
+        this.props.stopInterval();
         this.props.onControlPanelChange(state);
     }
 

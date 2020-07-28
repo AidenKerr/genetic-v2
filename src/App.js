@@ -28,6 +28,7 @@ class App extends React.Component {
 
         this.handleControlPanelChange = this.handleControlPanelChange.bind(this);
         this.handleControlPanelSubmit = this.handleControlPanelSubmit.bind(this);
+        this.stopInterval = this.stopInterval.bind(this);
     }
 
 
@@ -104,6 +105,11 @@ class App extends React.Component {
         }
     }
 
+    // this allows control panel to reset interval
+    stopInterval() {
+        clearInterval(this.genInterval);
+    }
+
     // calculates average fitness and returns as object for data visualization.
     calculateAverageFitness(gen) {
         const x = gen.generation;
@@ -156,6 +162,7 @@ class App extends React.Component {
                     optimal={this.state.optimal}
                     onControlPanelChange={this.handleControlPanelChange}
                     onControlPanelSubmit={this.handleControlPanelSubmit}
+                    stopInterval={this.stopInterval}
                 />
                 <DataPanel stats={this.state.stats} prevGen={prevGen}/>
                 <Generations
