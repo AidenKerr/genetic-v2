@@ -99,4 +99,4 @@ This is a cool, working visualisation, but it is not true reality.
 
 These are things I intend to fix or implement
 
-* Add mutation rate to Control Panel
+* Nothing right now. Feel free to send me ideas!
