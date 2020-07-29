@@ -15,6 +15,7 @@ class App extends React.Component {
             popSize: 50,
             deathCutoff: 5, // determines min fitness to survive
             maxGens: 50, // prevent infinite loops (hopefully less necessary once convergence is written)
+            mutationRate: 0.01, // the chance a mutation will occur for each individual in the population
             displayInterval: 25, // show every n generations
             optimal: this.alg.newColor(), // Optimal individual in environment (in RGB, but converted to LAB for fitness calculation)
             generations: [],
@@ -70,9 +71,10 @@ class App extends React.Component {
         const popSize = this.state.popSize;
         const optimal = this.state.optimal;
         const deathCutoff = this.state.deathCutoff;
+        const mutationRate = this.state.mutationRate;
 
         // create next generation
-        const nextGen = this.alg.nextGen(prevGen, popSize, optimal, deathCutoff);
+        const nextGen = this.alg.nextGen(prevGen, popSize, optimal, deathCutoff, mutationRate);
 
 
         // ensure next generation can actually repopulate. Otherwise end simulation
@@ -158,6 +160,7 @@ class App extends React.Component {
                     popSize={this.state.popSize}
                     deathCutoff={this.state.deathCutoff}
                     maxGens={this.state.maxGens}
+                    mutationRate={this.state.mutationRate}
                     displayInterval={this.state.displayInterval}
                     optimal={this.state.optimal}
                     onControlPanelChange={this.handleControlPanelChange}

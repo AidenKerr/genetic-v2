@@ -65,7 +65,7 @@ class Algorithm {
     }
 
     // compute the next generation
-    nextGen(prevGen, popSize, optimal, deathCutoff) {
+    nextGen(prevGen, popSize, optimal, deathCutoff, mutationRate) {
 
         // the population is grouped into pairs for breeding
         // I temporarily change the object for the selection
@@ -75,7 +75,7 @@ class Algorithm {
         let nextGen = this.crossover(selectionPop);
 
         // add mutations
-        nextGen = this.mutation(nextGen);
+        nextGen = this.mutation(nextGen, mutationRate);
 
         // calculate fitness
         nextGen = this.assignFitness(nextGen, optimal);
@@ -232,13 +232,12 @@ class Algorithm {
     }
 
     // occasionally add or subtract random amounts from the individual's RGB values
-    mutation(pop) {
+    mutation(pop, mutationRate) {
 
         for (let i = 0; i < pop.individuals.length; i++) {
             const ind = pop.individuals[i];
 
-            const mutationProb = 0.01;
-            if (Math.random() < mutationProb) {
+            if (Math.random() < mutationRate) {
 
                 const sign = Math.random() < 0.5 ? -1 : 1; // adding or subtracting?
 

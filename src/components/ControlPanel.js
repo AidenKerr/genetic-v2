@@ -16,7 +16,7 @@ class ControlPanel extends React.Component {
     // handles changes to the control panel except color changes
     handleChange(event) {
         const target = event.target;
-        const value = parseInt(target.value);
+        const value = parseFloat(target.value);
         const name = target.name;
 
         const state = {
@@ -76,6 +76,11 @@ class ControlPanel extends React.Component {
                     <label>
                         Display Every:
                         <input name="displayInterval" type="number" value={this.props.displayInterval} onChange={this.handleChange} min="1"/>
+                    </label>
+                    <br />
+                    <label>
+                        Mutation Rate:
+                        <input name="mutationRate" type="number" value={this.props.mutationRate} onChange={this.handleChange} min="0" max="100" step="0.001"/>
                     </label>
                     <br />
                     <label className={'colorPicker'}>
