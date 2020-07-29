@@ -1,11 +1,11 @@
-# Genetic Algorithm  
+# Genetic Algorithm  <img align="right" alt="Genetic Algorithm" src="./public/logo512.png" width="150px" height="150px">
 ## What is this?  
 
 This is a program I initially wrote for a BIOL 111 project. It visualizes the process of natural selection & evolution.
 
 I must admit, I am not a biologist! This is a fun visualization, but I do not make any claims about realism.
 
-This visualisation uses color to represent some arbitrary trait. When you click start, watch as the population's colors evolve!
+This visualisation uses color to represent an arbitrary trait. When you click start, watch as the population's colors evolve!
 
 ## How do I use this?  
 
