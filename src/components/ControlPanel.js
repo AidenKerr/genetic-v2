@@ -80,7 +80,7 @@ class ControlPanel extends React.Component {
                     <br />
                     <label>
                         Mutation Rate:
-                        <input name="mutationRate" type="number" value={this.props.mutationRate} onChange={this.handleChange} min="0" max="100" step="0.001"/>
+                        <input name="mutationRate" type="number" value={this.props.mutationRate} onChange={this.handleChange} min="0" max="1" step="0.001"/>
                     </label>
                     <br />
                     <label className={'colorPicker'}>
