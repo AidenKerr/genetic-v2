@@ -1,4 +1,7 @@
 # Genetic Algorithm  <img align="right" alt="Genetic Algorithm" src="./public/logo512.png" width="150px" height="150px">
+
+[Website link here!](https://aidenkerr.github.io/genetic-v2/)
+
 ## What is this?  
 
 This is a program I initially wrote for a BIOL 111 project. It visualizes the process of natural selection & evolution.
