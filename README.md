@@ -76,6 +76,8 @@ For example:
 4) "155020033"
 5) {R: 155, G: 020, B: 033}
 
+Ahh, the beauty of nature. I could cry.
+
 ### Mutation
 
 Mutations will add or subtract a random amount from one of the RGB values. This amount is typically small, but can be larger.
