@@ -18,7 +18,8 @@ First, choose your settings:
 * __Death Cutoff:__ Any individuals with a fitness below this cutoff will sadly pass away.
 * __Max Generations:__ The maximum number of generations to run this for.
 * __Display Every:__ Display every n generations.
-* __Optimal Color:__ This represents the color the colour the fitness score will be based on. 
+* __Optimal Color:__ This represents the color the fitness score will be based on. 
+* __Mutation Rate:__ The chance a mutation will occur where 0 is no chance and 1 is certain.
 
 Next, click start.
 
@@ -39,7 +40,7 @@ Each following generation is created with these steps:
 
 ### Fitness Function
 
-The fitness function uses the [DeltaE](http://zschuessler.github.io/DeltaE/) library to quantify color differences.
+The fitness function uses the [DeltaE](http://zschuessler.github.io/DeltaE/) library to quantify color differences. Once the color difference is calculated, I subtract it from 100 to create the fitness. 
 
 I could have used Euclidean distance, but the DeltaE library quantifies color difference based on human vision. [Read more here.](http://zschuessler.github.io/DeltaE/learn/)
 
@@ -55,7 +56,7 @@ This is similar to [fitness landscapes!](https://en.wikipedia.org/wiki/Fitness_l
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Visualization_of_a_population_evolving_in_a_static_fitness_landscape.gif" width="300px">  
 
-Once the color difference is calculated, I subtract it from 100 to create the fitness. 
+In this GIF, you can see how the population has many high-fitness peaks that it could adapt towards.
 
 ### Selection
 
