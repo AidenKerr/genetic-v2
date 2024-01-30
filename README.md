@@ -96,7 +96,7 @@ Here are some ways this _isn't_ realistic:
 
 * Fixed population size.
 * Populations evolve towards a fixed goal.
-* Lacks concepts of family or gender
+* Lacks concepts of family or gender.
 
 
 This is a cool, working visualisation, but it is not true reality.  
